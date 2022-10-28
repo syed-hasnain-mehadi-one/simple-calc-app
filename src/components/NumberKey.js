@@ -2,10 +2,12 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {COLORS, SIZES} from '../constants/Theme';
 
-const NumberKey = ({number}) => {
+const NumberKey = ({number, onPress}) => {
   return (
     <TouchableOpacity style={styles.container}>
-      <Text style={styles.number}>{number}</Text>
+      <Text style={styles.number} onPress={() => onPress(number)}>
+        {number}
+      </Text>
     </TouchableOpacity>
   );
 };

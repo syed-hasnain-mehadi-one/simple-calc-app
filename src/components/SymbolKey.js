@@ -1,11 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {Pressable, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {COLORS} from '../constants/Theme';
 
-const SymbolKey = ({number, color = COLORS.lightGary}) => {
+const SymbolKey = ({number, color = COLORS.lightGary, onPress}) => {
   return (
     <TouchableOpacity style={{...styles.container, backgroundColor: color}}>
-      <Text style={styles.number}>{number}</Text>
+      <Pressable onPress={() => onPress(number)}>
+        <Text style={styles.number}>{number}</Text>
+      </Pressable>
     </TouchableOpacity>
   );
 };
@@ -19,7 +21,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: COLORS.gray,
     alignItems: 'center',
-    borderRadius: 80,
+    borderRadius: 60,
     margin: 2,
   },
   number: {
