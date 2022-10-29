@@ -13,11 +13,9 @@ const Home = () => {
     } else if (text === '<') {
       setDisplay(pre => pre.substring(0, pre?.length - 1));
     } else if (text === '=') {
-      // let temp = display;
-      // temp = temp.replaceAll('X', '*');
-      // console.log('temp', temp);
-      // const result = parseFloat(temp);
-      // console.log('ressult', result);
+      let temp = display;
+
+      console.log('ressult', temp);
       setDisplay('');
     } else {
       setDisplay(pre => pre + text);
@@ -41,7 +39,7 @@ const Home = () => {
         <NumberKey number={4} onPress={handleNumPress} />
         <NumberKey number={5} onPress={handleNumPress} />
         <NumberKey number={6} onPress={handleNumPress} />
-        <SymbolKey number="X" onPress={handleNumPress} />
+        <SymbolKey number="x" onPress={handleNumPress} />
         <NumberKey number={1} onPress={handleNumPress} />
         <NumberKey number={2} onPress={handleNumPress} />
         <NumberKey number={3} onPress={handleNumPress} />
@@ -61,7 +59,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   displayContainer: {
-    height: 300,
+    height: '40%',
     width: '100%',
     backgroundColor: COLORS.black,
     justifyContent: 'center',
@@ -72,8 +70,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
+    height: '60%',
     backgroundColor: COLORS.lightBlack,
-    flex: 1,
     flexDirection: 'row',
     padding: 5,
     flexWrap: 'wrap',
